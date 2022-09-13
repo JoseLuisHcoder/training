@@ -1,0 +1,35 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+ 
+}
+.App {
+  width: 100%;display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: center;
+  justify-content: center;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  background-color: rgb(85, 85, 228);
+  color: white;
+  border-radius: 0.5rem;
+  
+
+}
+.list__item {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.list1 {
+  background-color: aquamarine;
+}
+.list2 {
+  background-color: goldenrod;
+}
