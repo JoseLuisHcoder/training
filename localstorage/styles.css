@@ -53,9 +53,9 @@ img {
 .btn_logout {
     color: #fff;
     background-color: brown;
-    /* position: fixed;
+    position: fixed;
     top: 1rem;
-    right: 1rem; */
+    right: 1rem;
 }
 
 .email_btn {
