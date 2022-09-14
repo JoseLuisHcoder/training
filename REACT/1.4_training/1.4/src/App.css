@@ -1,0 +1,16 @@
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.on {
+  background-color: gold;
+}
+.off {
+  background-color: #aaa;
+  
+}
+.btn {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
