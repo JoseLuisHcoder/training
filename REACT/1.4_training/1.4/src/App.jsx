@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+
 import './App.css'
 import Lamp from './components/Lamp'
+
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
      <Lamp />
      <Lamp />
      <Lamp />
+    
     </div>
   )
 }

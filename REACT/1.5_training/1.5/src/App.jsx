@@ -1,32 +1,43 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+
 import './App.css'
+import CardUsers from './componets/CardUsers';
+import users from './json/users.json';
+import colors from './componets/utilities/colors'
+
+
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const getRandomElement = (arr)=>{
+    const indexRandom = Math.floor(Math.random()*arr.length)
+    
+    return arr[indexRandom]
+  }
+  let genUserRandom = getRandomElement(users)
+  let genColorRandom = getRandomElement(colors)
 
+
+  const [userRandom, setUserRandom] = useState(genUserRandom)
+  const [colorRandom, setColorRandom] = useState(genColorRandom)
+  
+  const colorBg = {
+    background:colorRandom
+  }
+  const clickBtn = ()=>{
+    genUserRandom = getRandomElement(users)
+    genColorRandom = getRandomElement(colors)
+
+    setColorRandom(genColorRandom)
+    setUserRandom(genUserRandom)
+
+
+  }
+  
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div className="App" style={colorBg} >
+      <CardUsers userRandom={userRandom} colorRandom={colorRandom} clickBtn={clickBtn}/>
     </div>
   )
 }

@@ -1,0 +1,19 @@
+img {
+    width: 200px;
+}
+.App {
+display: flex;
+gap:20px;
+flex-wrap: wrap;
+justify-content: center;
+}
+.card {
+    background-color: orange;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+}
+.card__title {
+    color: white;
+    text-align: center;
+}

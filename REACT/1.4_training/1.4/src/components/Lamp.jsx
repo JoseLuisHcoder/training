@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 
+
+
 const Lamp = () => {
+
     const [OnOff, setOnOff] = useState('off')
   const toogleOnOff = ()=>{
     if(OnOff==='off'){
@@ -8,12 +11,11 @@ const Lamp = () => {
     }else{
       setOnOff('off')
     }
-
   }
   return (
     <div>
         <div className={`circle ${OnOff}`}></div>
-        <button onClick={toogleOnOff} className='btn'>{OnOff}</button>
+        <button className='btn' onClick={toogleOnOff}>{OnOff}</button>
     </div>
   )
 }
