@@ -1,0 +1,53 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import Home from './components/routes/Home'
+import Login from './components/routes/Login'
+import Purchases from './components/routes/Purchases'
+import ProductDetail from './components/routes/ProductDetail'
+import Header from './components/routes/shared/styles/Header'
+import { useEffect } from 'react'
+
+import axios from 'axios'
+import Cart from './components/routes/shared/styles/Cart'
+import ProtectedRoutes from './components/routes/routes1/ProtectedRoutes'
+
+
+function App() {
+
+  // useEffect(() => {
+  //   const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/users'
+  //   const obj = {
+  //       firstName: 'jose',
+  //       lastName: 'den',
+  //       email: 'tarija789@gmail.com', 
+  //       password: 'tarija789',
+  //       phone:'1284367891',
+  //       role: 'admin'
+  //     }
+    
+  //   axios.post(URL, obj)
+  //     .then(res => console.log(res.data)) 
+  //     .catch(err => console.log(err))
+
+  // }, [])
+
+
+  return (
+    <div className='App'>
+      <Header />
+      <Routes>
+        <Route  path='/' element={<Home />}/>
+        <Route  path='/login' element={<Login />}/>
+        <Route  path='/product/:id' element={<ProductDetail />}/>
+        <Route element={<ProtectedRoutes />}>
+            <Route  path='/cart' element={<Cart />}/>
+            <Route  path='/purchases' element={<Purchases />}/>
+        </Route>
+      </Routes>
+    </div>
+  )
+}
+
+export default App
