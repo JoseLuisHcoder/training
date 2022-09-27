@@ -23,7 +23,9 @@ function App() {
   
   return (
     <div className="App">
-      <CardWeather lat={coords?.lat} lon={coords?.lon} />
+      <div className='card_app'>
+          <CardWeather lat={coords?.lat} lon={coords?.lon} />
+      </div>
        
     </div>
   )

@@ -1,13 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllProducts } from '../../store/slices/products.slice'
 import CardHome from './home/CardHome'
+import CategoryFilter from './home/CategoryFilter'
 import InputSearch from './home/InputSearch'
+import PriceFilter from './home/PriceFilter'
 
 const Home = () => {
 
     const [inputSearch, setInputSearch] = useState()
+    const [filterProducts, setFilterProducts] = useState()
+    const [objFilterPrice, setObjFilterPrice] = useState()
+
+    const products = useSelector(state => state.products)
+    
+    useEffect(() => {
+        if(inputSearch.length !== 0){
+            const filter = products?.filter(e => e.title.toLowerCase().includes(inputSearch.toLowerCase()))
+            setFilterProducts(filter)
+        } else {
+            setFilterProducts('')
+        }
+    
+    }, [inputSearch])
 
     const dispatch = useDispatch()
 
@@ -15,14 +31,42 @@ const Home = () => {
         dispatch(getAllProducts())
     }, [])
 
-    const products = useSelector(state => state.products)
+    useEffect(() => {
+        const filter = products?.filter(e => {
+            const price = Number(e.price)
+            const min = objFilterPrice.from
+            const max = objFilterPrice.to
+            //este if es para cuando colocan un valor en los dos inputs
+            if(min && max){
+                return min <= price && price <= max
+            // este if es para cuando colocan un valor en min    
+            } else if(min && !max){
+                return min <= price
+            //este if es para cuando colocan un valor solo en max
+            } else if(!min && max){
+                return price <= max
+            //este else para cuando no colocan ningun dato en los dos inputs    
+            }else{
+                return true
+            }
+        })
+        setFilterProducts(filter)
+    }, [objFilterPrice.to , objFilterPrice.from])
+   
 
     console.log(inputSearch);
   return (
     <main className='home'>
         <InputSearch setInputSearch={setInputSearch} />
+        <CategoryFilter />
+        <PriceFilter  setObjFilterPrice={setObjFilterPrice}/>
         <div className='home__container__card'>
             {
+                filterProducts ? 
+                filterProducts?.map(product =>(
+                    <CardHome key={product.id} product={product}/>
+                ) )   
+                :
                 products?.map(product =>(
                     <CardHome key={product.id} product={product}/>
                 ) )     

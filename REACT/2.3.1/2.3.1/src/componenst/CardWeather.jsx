@@ -36,16 +36,16 @@ const CardWeather = ({lat, lon}) => {
    }else{
 
        return (
-         <div>
-             <h1>Weather APP</h1>
-             <h2>{`${weather?.name}, ${weather?.sys.country} `}</h2>
-             <div className="data">
+         <div className='card'>
+             <h1 className='card_title'>Weather APP</h1>
+             <h2 className='card_city'>{`${weather?.name}, ${weather?.sys.country} `}</h2>
+             <div className="card_data">
                  <div className="data__img">
                      <img src={weather && `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt="" />
                  </div>
      
                  <div className="data__info">
-                     <ul>
+                     <ul className='card_ul'>
                          <li><span>Winds Speed: </span>{weather?.wind.speed} m/s</li>
                          <li><span>Clouds: </span>{weather?.clouds.all} %</li>
                          <li><span>Prassure: </span>{weather?.main.pressure} hPa</li>
@@ -54,10 +54,10 @@ const CardWeather = ({lat, lon}) => {
      
              </div>
      
-             <div className="temperature">
+             <div className="card_temperature">
                  <h2>{isCelcius ? temperature?.celcius : temperature?.farenheit}</h2>
              </div>
-             <div className="btn">
+             <div className="card_btn">
              <button onClick={handleClick}>{isCelcius ? 'change °f' : 'change °C'}</button>
              </div>
          </div>

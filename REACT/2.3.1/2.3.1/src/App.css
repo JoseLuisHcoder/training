@@ -1,0 +1,44 @@
+
+
+.App {
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.card_app {
+    background-color: whitesmoke;
+    padding: 1rem;
+    border-radius: 5px;
+
+    box-shadow: 2px 1px 8px ;
+}
+.card_title {
+    text-align: center;
+}
+.card_city {
+    width: 100%;
+    text-align: center;
+}
+.card_data {
+    display: flex;
+    border-radius: 5px;
+    background-color: bisque;
+}
+.card_temperature {
+    text-align: center;
+}
+.card_btn {
+    text-align: center;
+}
+.card_ul {
+    
+    padding: 0.5rem;
+
+}

@@ -4,7 +4,7 @@ const InputSearch = ({setInputSearch}) => {
   
     const handleChange = e => {
         console.log(e.target.value)
-        setInputSearch(e.target.value)
+        setInputSearch(e.target.value.trim())
 
     }
   

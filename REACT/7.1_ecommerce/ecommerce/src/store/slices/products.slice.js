@@ -19,6 +19,13 @@ export const getAllProducts = () => (dispatch) => {
         .catch(err => console.log(err))
 }
 
+export const getProductByCategory = (id) => (dispatch) => {
+    const URL = `https://ecommerce-api-react.herokuapp.com/api/v1/products?category=${id}`
+    return axios.get (URL)
+    .then(res => dispatch(setProducts(res.data.data.products)))
+    .catch(err => console.log(err))
+}
+
 // https://documenter.getpostman.com/view/5028918/UVypxw3W#8d80d26a-7c0a-4283-a272-253ae4144624.   
 // https://dashing-puppy-89779d.netlify.app/
 // URL en postman
