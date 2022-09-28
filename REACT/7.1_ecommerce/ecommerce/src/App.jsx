@@ -16,22 +16,22 @@ import ProtectedRoutes from './components/routes/routes1/ProtectedRoutes'
 
 function App() {
 
-  // useEffect(() => {
-  //   const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/users'
-  //   const obj = {
-  //       firstName: 'jose',
-  //       lastName: 'den',
-  //       email: 'tarija789@gmail.com', 
-  //       password: 'tarija789',
-  //       phone:'1284367891',
-  //       role: 'admin'
-  //     }
+  useEffect(() => {
+    const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/users'
+    const obj = {
+        firstName: 'jose',
+        lastName: 'den',
+        email: 'tarija789@gmail.com', 
+        password: 'tarija789',
+        phone:'1284367891',
+        role: 'admin'
+      }
     
-  //   axios.post(URL, obj)
-  //     .then(res => console.log(res.data)) 
-  //     .catch(err => console.log(err))
+    axios.post(URL, obj)
+      .then(res => console.log(res.data)) 
+      .catch(err => console.log(err))
 
-  // }, [])
+  }, [])
 
 
   return (
@@ -51,3 +51,6 @@ function App() {
 }
 
 export default App
+
+// https://documenter.getpostman.com/view/5028918/UVypxw3W#8d80d26a-7c0a-4283-a272-253ae4144624.   
+// https://dashing-puppy-89779d.netlify.app/

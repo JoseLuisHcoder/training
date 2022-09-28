@@ -1,0 +1,14 @@
+.card {
+    background-color: rgb(250, 160, 75);
+    width: min(100%, 350px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 1px 0 5px;
+    padding: 1rem;
+    border-radius: 5px;
+}
+li {
+    list-style: none;
+}
