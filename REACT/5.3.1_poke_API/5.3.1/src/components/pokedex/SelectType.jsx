@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import './style/selectType.css'
 
 const SelectType = ({setOptionType, optionType, setPokeSearch}) => {
 
@@ -19,12 +20,13 @@ const SelectType = ({setOptionType, optionType, setPokeSearch}) => {
     }
     
   return (
-    <select value={optionType} onChange={handleChange}>
-        <option value="All">All Pokemons</option>
+    <select  className='btn__option' value={optionType} onChange={handleChange}>
+        <option  value="All">All Pokemons</option>
         {
             listType?.map(type =>(
-                <option key={type.name} value={type.name}>{type.name}</option>
-            ))
+                
+                   <option key={type.name} value={type.name}>{type.name}</option> 
+                            ))
         }
     </select>
   )

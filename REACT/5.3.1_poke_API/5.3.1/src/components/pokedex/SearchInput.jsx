@@ -1,4 +1,5 @@
 import React from 'react'
+import './style/searchInput.css'
 
 const SearchInput = ({setPokeSearch, setOptionType}) => {
 
@@ -11,8 +12,8 @@ const SearchInput = ({setPokeSearch, setOptionType}) => {
 
   return (
     <form onSubmit={handleSubmit}>
-        <input id="searchText" type="text" />
-        <button>Search</button>
+        <button className='btn'>Search</button>
+        <input className='input' id="searchText" type="text" />
     </form>
   )
 }

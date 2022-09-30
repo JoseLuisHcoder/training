@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux'
 import PokemonCard from './pokedex/PokemonCard'
 import SearchInput from './pokedex/SearchInput'
 import SelectType from './pokedex/SelectType'
+import './pokedex/style/pokedex.css'
+
 
 const Pokedex = () => {
     const [pokemons, setPokemons] = useState()
@@ -45,10 +47,21 @@ const Pokedex = () => {
     const nameTrainer = useSelector(state => state.nameTrainer)
   return (
     <div>
-        
-        <h2>Welcome {nameTrainer}, Catch them All</h2>
-        <SearchInput setPokeSearch={setPokeSearch} setOptionType={setOptionType}/>
-        <SelectType setPokeSearch={setPokeSearch} optionType={optionType} setOptionType= {setOptionType}/>
+        <header className='poke__header'>
+            <img className='poke__img' src="./images/pokeunite.png" alt="" />
+        <div className='poke__welcome'>
+            <h2 className='poke__welcome__user'>Welcome {nameTrainer}, Catch them All</h2>
+            <div className='poke__search'>
+                <span className='poke__input'>
+                    <SearchInput setPokeSearch={setPokeSearch} setOptionType={setOptionType}/>
+                </span>
+                <span>
+                    <SelectType setPokeSearch={setPokeSearch} optionType={optionType} setOptionType= {setOptionType}/>
+                </span>
+            </div>
+
+        </div>
+        </header>
         
         <div className='card__container'>
         {
@@ -58,6 +71,7 @@ const Pokedex = () => {
         }
 
         </div>
+        
     </div>
   )
 }

@@ -7,6 +7,7 @@ import ProtectedRoutes from './components/ProtectedRoutes'
 import Pokedex from './components/Pokedex'
 import PokemonDetails from './components/PokemonDetails'
 
+
 function App() {
   const [count, setCount] = useState(0)
 

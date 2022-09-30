@@ -1,0 +1,15 @@
+.input {
+    border: none;
+    height: 21px;
+    outline: none;
+}
+.btn {
+    border: none;
+    height: 23px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+.btn:hover {
+    color: white;
+    background-color: var(--color-blue);
+}
