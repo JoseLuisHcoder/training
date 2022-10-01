@@ -1,0 +1,10 @@
+
+
+.active-link {
+  background-color: orange;
+  color: white;
+}
+img {
+  width: 100%;
+  display: block;
+}
