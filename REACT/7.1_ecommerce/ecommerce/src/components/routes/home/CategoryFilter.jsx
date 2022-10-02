@@ -9,10 +9,10 @@ const CategoryFilter = () => {
     useEffect(() => {
         const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/products/categories'
         axios.get(URL)
-            .then(res => setCategories(res.data.data.catogories))
+            .then(res => setCategories(res.data.data.categories))
             .catch(err => console.log(err))
     }, [])
-
+// console.log(categories);
     const dispatch = useDispatch()
     const handleClickCategory = id => {
         dispatch(getProductByCategory(id))

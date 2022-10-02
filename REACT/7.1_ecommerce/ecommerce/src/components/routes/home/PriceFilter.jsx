@@ -4,11 +4,11 @@ const PriceFilter = ({setObjFilterPrice}) => {
 const submit = e => {
     e.preventDefault()
     const obj = {
-        from: +e.target.fromPrice.value,
-        to: +e.target.toPrice.value,
+        from: Number(e.target.fromPrice.value),
+        to: Number(e.target.toPrice.value)
     }
     setObjFilterPrice(obj)
-
+console.log(obj);
 }
 
     return (

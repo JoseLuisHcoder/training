@@ -9,15 +9,15 @@ import PriceFilter from './home/PriceFilter'
 
 const Home = () => {
 
-    const [inputSearch, setInputSearch] = useState()
+    const [inputSearch, setInputSearch] = useState('')
     const [filterProducts, setFilterProducts] = useState()
-    const [objFilterPrice, setObjFilterPrice] = useState()
+    const [objFilterPrice, setObjFilterPrice] = useState({})
 
     const products = useSelector(state => state.products)
-    
+     //filtro por Categorias
     useEffect(() => {
         // inputSearch.length   quitamos eso del if por  error en consola
-        if(inputSearch !== 0){
+        if(inputSearch.length !== 0){
             const filter = products?.filter(e => e.title.toLowerCase().includes(inputSearch.toLowerCase()))
             setFilterProducts(filter)
         } else {
@@ -31,7 +31,7 @@ const Home = () => {
     useEffect(() => {
         dispatch(getAllProducts())
     }, [])
-
+console.log(objFilterPrice);
     useEffect(() => {
         const filter = products?.filter(e => {
             const price = Number(e.price)
@@ -52,11 +52,11 @@ const Home = () => {
             }
         })
         setFilterProducts(filter)
-    }, [])
+    }, [objFilterPrice.to , objFilterPrice.from])
     // [objFilterPrice.to , objFilterPrice.from]  quitamos esto del arreglo de dependencias por error en consola que da, lo pondremos una vez sepamosporque ocurre el error
    
 
-    console.log(inputSearch);
+    // console.log(inputSearch);
   return (
     <main className='home'>
         <InputSearch setInputSearch={setInputSearch} />

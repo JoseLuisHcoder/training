@@ -17,7 +17,7 @@ const ProductDescription = ({productInfo}) => {
       id: productInfo.id,
       quantity: counter
     }
-    axios.post(URL, obj, getConfig)
+    axios.post(URL, obj, getConfig())
       .then(res => console.log(res.data))
       .catch(err => console.log(err))
 

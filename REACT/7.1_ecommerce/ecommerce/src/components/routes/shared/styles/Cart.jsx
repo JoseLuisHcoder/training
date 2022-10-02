@@ -10,7 +10,7 @@ const Cart = () => {
     const getAllProductsCart = () => {
         
         const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
-        axios.get(URL, getConfig)
+        axios.get(URL, getConfig())
             .then(res => {
                 const products = res.data.data.cart.products
                 setCartProducts(products)
@@ -19,29 +19,29 @@ const Cart = () => {
                     return Number(cv.price) * cv.productsInCart.quantity + acc
                 }, 0)
                 setTotalPrice(total)
-                console.log(total);
+                console.log(totalPrice);
             } )
-            .catch(err => console.log(err))
+            .catch(err => setCartProducts())
     }
 
     useEffect(() => {
         getAllProductsCart()
     }, [])
-    console.log(cartProducts);
+    // console.log(cartProducts);
 
     const handleCheckout = () => {
 
         const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/purchases'
         const obj = {
-                            "street": "Green St. 1456",
-                colony: "Southwest",
+                street: "Tarija",
+                colony: "lati",
                 zipCode: 12345,
                 city: "USA",
                 references: "Some references"
             }
-        axios.post(URL, obj, getGonfig())
+        axios.post(URL, obj, getConfig())
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 getAllProductsCart()
                 setTotalPrice(0)
             } )
@@ -54,6 +54,7 @@ const Cart = () => {
             {
                 cartProducts?.map(product => (
                     <ProductCartInfo 
+                    getAllProductsCart={getAllProductsCart}
                     key={product.id}
                     product={product}
                     />
@@ -63,7 +64,7 @@ const Cart = () => {
         <hr />
         <footer>
             <span>Total: </span>
-            <p>1350</p>
+            <p>{totalPrice}</p>
             <button onClick={handleCheckout}>Checkout</button>
         </footer>
 

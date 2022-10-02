@@ -16,7 +16,7 @@ const CardHome = ({product}) => {
         const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
         const obj = {
             id: product.id,
-      quantity: 1
+            quantity: 1
         }
 
         axios.post(URL, obj, getConfig())

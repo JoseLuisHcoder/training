@@ -9,19 +9,23 @@ const Purchases = () => {
   useEffect(() => {
       const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/purchases'
       axios.get(URL, getConfig())
-          .then(res => setPurchases(res.data))
+          .then(res => setPurchases(res.data.data.purchases))
           .catch(err => console.log(err))
       }, [])
-      console.log(purchases);
+      // console.log(purchases);
 
 
   return (
     <div>
-      {
-            purchases?.map(purchase => (
-                <PurchasesCard key={purchase.id} purchase= {purchase} />
-            ))
-        }
+      <h2>Purchase</h2>
+      <div>
+        {
+              purchases?.map(purchase => (
+                  <PurchasesCard key={purchase.id} purchase= {purchase} />
+              ))
+          }
+
+      </div>
     </div>
   )
 }

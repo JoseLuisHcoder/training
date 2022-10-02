@@ -16,22 +16,23 @@ import ProtectedRoutes from './components/routes/routes1/ProtectedRoutes'
 
 function App() {
 
-  useEffect(() => {
-    const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/users'
-    const obj = {
-        firstName: 'jose',
-        lastName: 'den',
-        email: 'tarija789@gmail.com', 
-        password: 'tarija789',
-        phone:'1284367891',
-        role: 'admin'
-      }
+  // COMENTAMOS PORQUE SOLO SE NECESITA PARA CREAR UN USARIO NUEVO
+  // useEffect(() => {
+  //   const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/users'
+  //   const obj = {
+  //       firstName: 'jose',
+  //       lastName: 'den',
+  //       email: 'tarija789@gmail.com', 
+  //       password: 'tarija789',
+  //       phone:'1284367891',
+  //       role: 'admin'
+  //     }
     
-    axios.post(URL, obj)
-      .then(res => console.log(res.data)) 
-      .catch(err => console.log(err))
+  //   axios.post(URL, obj)
+  //     .then(res => console.log(res.data)) 
+  //     .catch(err => console.log(err))
 
-  }, [])
+  // }, [])
 
 
   return (
