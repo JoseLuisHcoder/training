@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import PurchasesCard from './purchases/PurchasesCard'
+import getConfig from '../../utils/getConfig'
 
 const Purchases = () => {
   

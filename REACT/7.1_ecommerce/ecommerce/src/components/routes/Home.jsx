@@ -16,7 +16,8 @@ const Home = () => {
     const products = useSelector(state => state.products)
     
     useEffect(() => {
-        if(inputSearch.length !== 0){
+        // inputSearch.length   quitamos eso del if por  error en consola
+        if(inputSearch !== 0){
             const filter = products?.filter(e => e.title.toLowerCase().includes(inputSearch.toLowerCase()))
             setFilterProducts(filter)
         } else {
@@ -51,7 +52,8 @@ const Home = () => {
             }
         })
         setFilterProducts(filter)
-    }, [objFilterPrice.to , objFilterPrice.from])
+    }, [])
+    // [objFilterPrice.to , objFilterPrice.from]  quitamos esto del arreglo de dependencias por error en consola que da, lo pondremos una vez sepamosporque ocurre el error
    
 
     console.log(inputSearch);

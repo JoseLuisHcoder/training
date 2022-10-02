@@ -22,7 +22,7 @@ const Header = () => {
                 </li>
 
                 <li className='header_item' >
-                    <h2 className='header__link'>Cart</h2>
+                    <NavLink className={({isActive}) => isActive ? 'active-link' : ''} to='/cart' >Cart</NavLink>
                 </li>
             </ul>
 

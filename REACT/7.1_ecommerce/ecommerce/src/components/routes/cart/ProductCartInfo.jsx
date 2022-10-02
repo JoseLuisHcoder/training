@@ -21,7 +21,7 @@ const ProductCartInfo = ({product}) => {
             <p className='cart__total_number'>{product.price}</p>
         </div>
     </article>
-    
+     
   )
 }
 
