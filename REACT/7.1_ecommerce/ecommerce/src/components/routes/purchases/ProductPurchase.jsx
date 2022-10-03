@@ -2,10 +2,10 @@ import React from 'react'
 
 const ProductPurchase = ({product}) => {
   return (
-    <li>
-        <h4>{product.title}</h4>
-        <span>{product.productsInCart.quantity}</span>
-        <span>{product.price}</span>
+    <li className='detail__pur'>
+        <h4 className='detail__pur__title'>{product.title}</h4>
+        <span className='detail__pur__quantity'>{product.productsInCart.quantity}</span>
+        <span className='detail__pur__price'>$ {product.price}</span>
     </li>
   ) 
 }

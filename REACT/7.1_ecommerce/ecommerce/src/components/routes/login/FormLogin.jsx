@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-
+import './style/formLogin.css'
 const FormLogin = () => {
 
     const {register, handleSubmit, reset} = useForm()
@@ -27,30 +27,40 @@ const FormLogin = () => {
                 }, 5000)
             })
         // comentamos esto para q no se resete nuestro usuario y contraseña cada ve, lo ponemos cuando se necesite
-        // reset({
-        //     email:'',
-        //     password:''
-        // })
+        reset({
+            email:'',
+            password:''
+        })
     }
     
   return (
-    <form onSubmit={handleSubmit(submit)}>
-        <h2>Welcome! Enter your email and password</h2>
-        <div>
-            <label htmlFor="email">Email</label>
-            <input {...register('email')} type="email" id="email" />
-        </div>
-        <div>
-        <label htmlFor="password">Password</label>
-            <input {...register('password')} type="password" id="password" />
-        </div>
-        <div>
-            {
-                isErrorLogin && 'Invalid credentials, Try again...'
-            }
-        </div>
-        <button>Login</button>
-    </form>
+    <div className='login'>
+
+        <form className='login__form' onSubmit={handleSubmit(submit)}>
+            <ul className='login__test'>
+                <li className='login__test__b'><b>Email:  </b>datatest@gmail.com</li>
+                <li className='login__test__b'><b>Password:  </b>data123</li>
+            </ul>
+            <h3 className='login__title'>Enter your email and password</h3>
+            <ul className='login__list'>
+                <li className='login__item'>
+                    <label className='login__label'  htmlFor="email">Email</label>
+                    <input className='login__input' {...register('email')} type="email" id="email" />
+                </li>
+                <li className='login__item'>
+                <label  className='login__label' htmlFor="password">Password</label>
+                    <input className='login__input' {...register('password')} type="password" id="password" />
+                </li>
+                <div>
+                    {
+                        isErrorLogin && 'Invalid credentials, Try again...'
+                    }
+                </div>
+            </ul>
+            <button>Login</button>
+        </form>
+
+    </div>
   )
 }
 

@@ -1,4 +1,4 @@
 .active-link {
-  background-color: red;
-  color: white;
+  
+  color:var(--secondary-color);
 }

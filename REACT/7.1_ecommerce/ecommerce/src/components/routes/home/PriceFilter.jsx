@@ -12,7 +12,7 @@ console.log(obj);
 }
 
     return (
-        <form onSubmit={submit}>
+        <form className='price_filter' onSubmit={submit}>
             <h3>Price</h3>
             <ul>
                 <li>

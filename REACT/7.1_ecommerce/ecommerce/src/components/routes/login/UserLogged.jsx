@@ -1,10 +1,11 @@
 import React from 'react'
+import './style/userLogged.css'
 
 const UserLogged = () => {
   return (
-    <article>
-        <i className='bx bxs-user-check'></i>
-        <h2>User Logged</h2>
+    <article className='logged'>
+        <i className=' logged_i bx bxs-user-circle'></i>
+        <h2 className='logged_p'>User Logged</h2>
     </article>
   )
 }

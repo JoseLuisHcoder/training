@@ -23,7 +23,7 @@ const CategoryFilter = () => {
     }
 
   return (
-    <div>
+    <div className='category_filter'>
         <h3>Categoy</h3>
             <ul>
                 <li onClick={handleClickAllProducts} >All Products</li>

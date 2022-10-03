@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+
 import { Route, Routes } from 'react-router-dom'
 import Home from './components/routes/Home'
 import Login from './components/routes/Login'
@@ -20,10 +21,10 @@ function App() {
   // useEffect(() => {
   //   const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/users'
   //   const obj = {
-  //       firstName: 'jose',
-  //       lastName: 'den',
-  //       email: 'tarija789@gmail.com', 
-  //       password: 'tarija789',
+  //       firstName: 'Ronaldinho',
+  //       lastName: 'De Souza',
+  //       email: 'datatest@gmail.com', 
+  //       password: 'data123',
   //       phone:'1284367891',
   //       role: 'admin'
   //     }
