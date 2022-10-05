@@ -17,16 +17,9 @@ function App() {
       .then(res => setCars(res.data))
       .catch(err => console.log(err))
       }
-const createNewCar = () => {
+const createNewCar = data => {
   const URL = 'https://cars-crud.herokuapp.com/cars/'
-  const data = {
-    brand: 'toretto',
-    model: 'tor',
-    color: 'orange',
-    year:	2022,
-    price: 452255
-
-  }
+  
   axios.post(URL, data)
     .then(res => getAllCars())
     .catch(err => console.log(err))
@@ -36,17 +29,35 @@ const createNewCar = () => {
     getAllCars()
   })
 
+  const updateCardById = id => {
+    const URL = `https://cars-crud.herokuapp.com/cars/${id}/`
+    const data = {
+      brand: 'terminator',
+      model: 'ghghghg',
+      color: 'black',
+      year: '2023',
+      price: 999999
+    }
+    axios.patch(URL, data)
+      .then(res => {
+        console.log(res.data);
+        getAllCars()
+      })
+      .catch(err => console.log(err))
+
+  }
+
 // console.log(cars);
 
   return (
     <div className="App">
       <h1>CRUD con axios</h1>
-      <HookForm />
-      <button onClick={createNewCar}>Create New car</button>
+      <HookForm createNewCar={createNewCar} />
+      <button onClick={createNewCar}></button>
       <div>
         {
           cars?.map(car =>(
-            <CardCars  key={car.id} car={car} getAllCars={getAllCars}/>
+            <CardCars  key={car.id} car={car} getAllCars={getAllCars} updateCardById={updateCardById}/>
           ))
         }
       </div>

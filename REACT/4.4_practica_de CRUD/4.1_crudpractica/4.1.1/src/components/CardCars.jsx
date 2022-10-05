@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 
-const CardCars = ({car, getAllCars}) => {
+const CardCars = ({car, getAllCars, updateCardById}) => {
 
     const deleteCarId = id => {
         const URL = `https://cars-crud.herokuapp.com/cars/${id}/`
@@ -20,6 +20,7 @@ const CardCars = ({car, getAllCars}) => {
             <li>{car.year}</li>
         </ul>
         <button onClick={() => deleteCarId(car.id)}>Delete car</button>
+        <button onClick={() => updateCardById(car.id)}>Update car</button>
     </div>
   )
 }
