@@ -11,7 +11,7 @@ const hooksCounter = (initialValue=0, resetValue=0, minValue= - Infinity, maxVal
 
         }
      const rest = ()=> {
-        if(minValue <= counter - 1){
+        if(minValue <= counter - 1){ 
             setCounter(counter - 1)}
         }
      const reset = ()=> setCounter(resetValue)
